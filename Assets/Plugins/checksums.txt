@@ -1,0 +1,12 @@
+bab4f4e2cee9f355a007f001ed60d6bb039337fe  Couchbase.Lite.dll
+35732fc76dedd792b3fd8d54f98be394d02ad0ee  ICSharpCode.SharpZipLib.dll
+340a5933f3b8ec7c7ff142ce72d06c4e9d1e5d6a  Newtonsoft.Json.dll
+0e92645a813c56eba2135dbc316c970ea433de5e  Rackspace.Threading.dll
+e83d70b32f39c0cb37dc9fd7673d3cd123b7646b  SQLitePCL.raw.dll
+000dd7b79b1aad39e192aa6de54f793629e70437  System.Net.Http.Net35.dll
+0e529493b4fde9f7ac2c813c433680ac16372ba4  System.Threading.Tasks.Net35.dll
+55a399fe9d036a492e2bb55b2853c9ce7f98eb16  ugly_net35.dll
+7aafb9f1b654d94e8d4a2f2b56afc84d71c5b0e9  Android/SQLitePCL.raw.dll
+d48e0f9f0e59cf109ca196ad03279e1e49238df3  iOS/SQLitePCL.raw.dll
+d96289feb9311114a24028dc7424dfe431aa995f  x86/sqlite3.dll
+044a9e7b15b0f5cf322ba646b279f07399fdfef3  x64/sqlite3.dll
