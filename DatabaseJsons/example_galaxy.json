@@ -1,0 +1,92 @@
+{
+   "_id": "2e2b5934c41a224f154a343e2d002b29",
+   "_rev": "1-88314ae466cf869f352cf96bf60a36f7",
+   "galaxy_name": "Fagotadis",
+   "galaxy_stars": [
+      {
+         "star_name": "Anan",
+         "planets": [
+             {
+                 "planet_name": "Anan-1",
+                 "planet_coordinates": {
+                     "planet_x": 0,
+                     "planet_y": 0,
+                     "planet_z": 0
+                 }
+             },
+             {
+                 "planet_name": "Anan-2",
+                 "planet_coordinates": {
+                     "planet_x": 0,
+                     "planet_y": 0,
+                     "planet_z": 0
+                 },
+
+                 "planet_satellites": [
+                    {
+                      "satellite_name":"Fagotosfer-X",
+                      "satellite_type":"Station"
+                    },
+                    {
+                      "satellite_name":"Anan-1a",
+                      "satellite_type":"Moon",
+                      "satellite_facilities": [
+                        {
+                            "facility_name": "SexHole",
+                            "facility_type": "WC"
+                        },
+                        {
+                            "facility_name": "KazikShop",
+                            "facility_type": "General Shop"
+                        }
+                      ],
+                      "satellite_resources": [
+                          {
+                            "resource_name": "fagotcan",
+                            "resource_type": "anan",
+                            "resource_description": "mighty elemnent spawned by fagot spawns."
+                          },
+                          {
+                            "resource_name": "faggy dust",
+                            "resource_type": "baban",
+                            "resource_description": "mighty dust spawned by fagot spawns."
+                          }
+                      ]
+                    }
+                  ]
+             }
+         ],
+         "star_coordinates": {
+             "star_x": "0",
+             "star_y": "0",
+             "star_z": "0"
+         }
+     },
+     {
+         "star_name": "Anan-2",
+         "planets": [
+             {
+                 "planet_name": "Anan-1a",
+                 "planet_coordinates": {
+                     "planet_x": 0,
+                     "planet_y": 0,
+                     "planet_z": 0
+                 }
+             },
+             {
+                 "planet_name": "Anan-2a",
+                 "planet_coordinates": {
+                     "planet_x": 0,
+                     "planet_y": 0,
+                     "planet_z": 0
+                 }
+             }
+         ],
+         "star_coordinates": {
+             "star_x": "0",
+             "star_y": "0",
+             "star_z": "0"
+         }
+     }
+   ]
+}
