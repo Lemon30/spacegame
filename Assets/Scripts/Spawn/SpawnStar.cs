@@ -8,8 +8,7 @@ public class SpawnStar : MonoBehaviour {
 	public int minDist = 0;
 	public int maxDist = 100;
 	public int numberOfStars = 1000;
-
-
+	TextMesh textObject;
 
 	public void MakeRandomStar(){
 		int arrayIdx = Random.Range(0, starSprites.Length);
@@ -25,6 +24,9 @@ public class SpawnStar : MonoBehaviour {
 		newStar.GetComponent<SpriteRenderer> ().sprite = starSprite;
 
 		newStar.GetComponent<BoxCollider2D>().size = starSprite.bounds.size;
+		textObject = newStar.GetComponentInChildren<TextMesh> ();
+		textObject.text = "\t" + newStar.name;
+		textObject.color = Color.cyan;
 	}
 
 	void Start(){

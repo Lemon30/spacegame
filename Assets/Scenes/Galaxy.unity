@@ -112,12 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f04f60bebe23bd448d75b08f4a5ef68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starPrefab: {fileID: 181246, guid: 027bc13790dc4884a85e8ce68996892f, type: 2}
+  starPrefab: {fileID: 179670, guid: a0562171d55137945b0600fdbf38de0e, type: 2}
   starSprites:
-  - {fileID: 21300000, guid: abb0823289b0b624888e199ef7c6fc85, type: 3}
-  - {fileID: 21300000, guid: 97235508cadc433478b22193191d2c75, type: 3}
-  - {fileID: 21300000, guid: d269263a3aa5b4149bc36cee5c6dcd81, type: 3}
-  - {fileID: 21300000, guid: ffe04c2fb4cc6414a8650fbfb3831541, type: 3}
+  - {fileID: 21300000, guid: d678d621dc930d5439a2a65d31eb606a, type: 3}
   minDist: -200
   maxDist: 200
   numberOfStars: 1000
