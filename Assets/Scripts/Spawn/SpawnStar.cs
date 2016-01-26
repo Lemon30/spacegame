@@ -20,7 +20,7 @@ public class SpawnStar : MonoBehaviour {
 		GameObject newStar = (GameObject)Instantiate (starPrefab, new Vector3 (starX, starY, 0), Quaternion.identity);
 
 		newStar.name = starName;
-		newStar.GetComponent<Star>().starName = starName;
+		newStar.GetComponent<Starx>().starName = starName;
 		newStar.GetComponent<SpriteRenderer> ().sprite = starSprite;
 
 		newStar.GetComponent<BoxCollider2D>().size = starSprite.bounds.size;

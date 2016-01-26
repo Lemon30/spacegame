@@ -19,11 +19,11 @@ public class debug : MonoBehaviour {
 		IEnumerable<Star> stars = database.GetAllDocuments<Star>();
 		IEnumerator<Star> stars_iter = stars.GetEnumerator ();
 		while (stars_iter.MoveNext()) {
-			var s = stars_iter.Current;
-			Debug.Log ("Name: " + s.name + 
-				"\nCoordinates: " + s.coordinates[0] + "," + s.coordinates[1] + "," + s.coordinates[2] +
+			var star = stars_iter.Current;
+			Debug.Log ("Name: " + star.name + 
+				"\nCoordinates: " + star.coordinates[0] + "," + star.coordinates[1] + "," + star.coordinates[2] +
 				"\nPlanets: \n");
-			foreach(var planet in s.planets){
+			foreach(var planet in star.planets){
 				Debug.Log ("\nPNAME:" + planet.name);
 				Debug.Log ("\nPCOR:" + planet.coordinates[0] + "," + planet.coordinates[1] + "," + planet.coordinates[2]);
 				Debug.Log ("\nPSAT:" + planet.satellites[0].name + ", "+ planet.satellites[0].type);
