@@ -1,0 +1,165 @@
+{
+   "_id": "2",
+   "_rev": "2-91903b4b37cd21e7e921b67d848ce4ec",
+   "star_name": "Anan",
+   "planets": [
+       {
+           "planet_name": "Anan-1",
+           "planet_coordinates": {
+               "planet_x": 0,
+               "planet_y": 0,
+               "planet_z": 0
+           },
+           "planet_satellites": [
+               {
+                   "satellite_name": "Fagotosfer-X",
+                   "satellite_type": "Station"
+               },
+               {
+                   "satellite_name": "Anan-1a",
+                   "satellite_type": "Moon",
+                   "satellite_facilities": [
+                       {
+                           "facility_name": "SexHole",
+                           "facility_type": "WC"
+                       },
+                       {
+                           "facility_name": "KazikShop",
+                           "facility_type": "General Shop"
+                       }
+                   ]
+               }
+           ],
+           "planet_owner": "user_id",
+           "planet_tiles": [
+               {
+                   "tile_id": "1",
+                   "tile_type": 2,
+                   "player_building": {
+                       "building_id": "1",
+                       "building_name": "Sextory",
+                       "building_type": "sex",
+                       "building_level": 5
+                   }
+               },
+               {
+                   "tile_id": "2",
+                   "tile_type": 2,
+                   "player_building": {
+                       "building_id": "1",
+                       "building_name": "Sextory",
+                       "building_type": "sex",
+                       "building_level": 5
+                   }
+               }
+           ]
+       },
+       {
+           "planet_name": "Anan-2",
+           "planet_coordinates": {
+               "planet_x": 0,
+               "planet_y": 0,
+               "planet_z": 0
+           },
+           "planet_satellites": [
+               {
+                   "satellite_name": "Fagotosfer-X",
+                   "satellite_type": "Station"
+               },
+               {
+                   "satellite_name": "Anan-1a",
+                   "satellite_type": "Moon",
+                   "satellite_facilities": [
+                       {
+                           "facility_name": "SexHole",
+                           "facility_type": "WC"
+                       },
+                       {
+                           "facility_name": "KazikShop",
+                           "facility_type": "General Shop"
+                       }
+                   ]
+               }
+           ],
+           "planet_owner": "user_id",
+           "planet_tiles": [
+               {
+                   "tile_id": "1",
+                   "tile_type": 2,
+                   "player_building": {
+                       "building_id": "1",
+                       "building_name": "Sextory",
+                       "building_type": "sex",
+                       "building_level": 5
+                   }
+               },
+               {
+                   "tile_id": "2",
+                   "tile_type": 2,
+                   "player_building": {
+                       "building_id": "1",
+                       "building_name": "Sextory",
+                       "building_type": "sex",
+                       "building_level": 5
+                   }
+               }
+           ]
+       },
+       {
+           "planet_name": "Anan-3",
+           "planet_coordinates": {
+               "planet_x": 0,
+               "planet_y": 0,
+               "planet_z": 0
+           },
+           "planet_satellites": [
+               {
+                   "satellite_name": "Fagotosfer-X",
+                   "satellite_type": "Station"
+               },
+               {
+                   "satellite_name": "Anan-1a",
+                   "satellite_type": "Moon",
+                   "satellite_facilities": [
+                       {
+                           "facility_name": "SexHole",
+                           "facility_type": "WC"
+                       },
+                       {
+                           "facility_name": "KazikShop",
+                           "facility_type": "General Shop"
+                       }
+                   ]
+               }
+           ],
+           "planet_owner": "user_id",
+           "planet_tiles": [
+               {
+                   "tile_id": "1",
+                   "tile_type": 2,
+                   "player_building": {
+                       "building_id": "1",
+                       "building_name": "Sextory",
+                       "building_type": "sex",
+                       "building_level": 5
+                   }
+               },
+               {
+                   "tile_id": "2",
+                   "tile_type": 2,
+                   "player_building": {
+                       "building_id": "1",
+                       "building_name": "Sextory",
+                       "building_type": "sex",
+                       "building_level": 5
+                   }
+               }
+           ]
+       }
+   ],
+   "star_coordinates": {
+       "star_x": "0",
+       "star_y": "0",
+       "star_z": "0"
+   }
+}

@@ -1,0 +1,48 @@
+{
+   "_id": "1fb7b669e09bf7530eb28431250014b3",
+   "_rev": "1-967a00dff5e02add41819138abb3284d",
+   "user_id": "ananvelet9161",
+   "user_name": "ananvelet",
+   "owned_planets": [
+   		{ "planet_name": "anan" },
+   		{ "planet_name": "baban" }
+   ],
+   "user_filo": [
+   		{ 
+   			"unit_name": "veleds",
+   		  	"unit_type": "velet",
+   		  	"unit_description": "bla bla bla",
+   		  	"unit_stack": 5 
+   		},
+   		{ 
+   			"unit_name": "veleds",
+   		  	"unit_type": "velet",
+   		  	"unit_description": "bla bla bla",
+   		  	"unit_stack": 5 
+   		},
+   		{ 
+   			"unit_name": "veleds",
+   		  	"unit_type": "velet",
+   		  	"unit_description": "bla bla bla",
+   		  	"unit_stack": 5 
+   		}
+   ],
+   "user_resources": [
+   		{
+   			"resource_name": "anandust",
+   			"resource_type": "dust",
+   			"resource_count": 500
+   		},
+   		{
+   			"resource_name": "anandust",
+   			"resource_type": "dust",
+   			"resource_count": 500
+   		},
+   		{
+   			"resource_name": "anandust",
+   			"resource_type": "dust",
+   			"resource_count": 500
+   		}
+   ],
+   "user_faction": "Anans"
+}
