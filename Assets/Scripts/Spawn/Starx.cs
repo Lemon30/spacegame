@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Star : MonoBehaviour {
+public class Starx : MonoBehaviour {
 	private Vector2 origPos;
 	public string starName;
 
