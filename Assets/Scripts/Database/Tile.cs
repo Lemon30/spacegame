@@ -6,12 +6,22 @@ using Divan;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+/// <summary>
+/// Tile class encapsulates tile information for planets.
+/// When planets will be drawn, they use this information to
+/// generate tiles.
+/// </summary>
 public class Tile
 {
+	// Basic information.
 	public string id;
 	public int type;
 	public Building building;
 
+	/// <summary>
+	/// Building inner class which will hold building information
+	/// in tile object. Building can only be exists inside of a tile.
+	/// </summary>
 	public class Building 
 	{
 		public string id;
@@ -19,6 +29,10 @@ public class Tile
 		public string type;
 		public int level;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Tile+Building"/> class.
+		/// </summary>
+		/// <param name="b_info">Building information in JToken object.</param>
 		public Building(JToken b_info){
 			id = b_info["building_id"].Value<string>();
 			name = b_info["building_name"].Value<string>();
@@ -27,6 +41,11 @@ public class Tile
 		}
 
 	}
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Tile"/> class.
+	/// </summary>
+	/// <param name="t_info">Tile information in JToken object.</param>
 	public Tile (JToken t_info)
 	{
 		id = t_info ["tile_id"].Value<string> ();

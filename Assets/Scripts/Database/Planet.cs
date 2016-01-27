@@ -6,6 +6,10 @@ using Divan;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+/// <summary>
+/// Planet class for acquiring and writing planet information
+/// to the database. It does not work without its parent class
+/// </summary>
 public class Planet {
 
 	public string name;
@@ -14,6 +18,12 @@ public class Planet {
 	public string owner;
 	public List<Tile> tiles = new List<Tile>();
 
+	/// <summary>
+	/// Initializes a new instance of the <see cref="Planet"/> class.
+	/// It initializes <see cref="Planet"/> class by parsing JTokens
+	/// into strings and ints.
+	/// </summary>
+	/// <param name="planet_info">Gets planet information as JToken object.</param>
 	public Planet (JToken planet_info) { 
 		name = planet_info ["planet_name"].Value<string>();
 

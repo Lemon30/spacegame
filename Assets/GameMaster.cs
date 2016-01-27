@@ -37,10 +37,18 @@ public class GameMaster : MonoBehaviour {
 		// Fetch the home planet details from the database
 		// and create a global planet object called myPlanet
 
-		//myPlanet = new Planet();
+		// If some attribute which belongs to a star will be called, 
+		// then it is necessary that a Star object to be created.
+		// starID should be recognized from beginning and it should be 
+		// known that which plaet we are on.
+		var starID = "star-1";
+		var currentStar = database.GetDocument<Star> (starID);
 
+		// Get planet from current selected star.
+		var currentPlanet = currentStar.planets [0];
+		// Debug log for testing.
+		Debug.Log(currentPlanet.name);
 	}
-
 }
 
 /*using UnityEngine;
