@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 930635683}
   - 114: {fileID: 930635682}
-  - 114: {fileID: 930635684}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -131,17 +130,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!114 &930635684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 930635681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d7d14cc64a4c3d4881c339db1c3a349, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1141692405
 GameObject:
   m_ObjectHideFlags: 0
