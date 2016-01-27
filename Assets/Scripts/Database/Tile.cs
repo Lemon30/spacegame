@@ -34,12 +34,13 @@ public class Tile
 		/// </summary>
 		/// <param name="b_info">Building information in JToken object.</param>
 		public Building(JToken b_info){
-			id = b_info["building_id"].Value<string>();
-			name = b_info["building_name"].Value<string>();
-			type = b_info["building_type"].Value<string>();
-			level = b_info["building_level"].Value<int>();
+			if (b_info != null){
+				id = b_info["building_id"].Value<string>();
+				name = b_info["building_name"].Value<string>();
+				type = b_info["building_type"].Value<string>();
+				level = b_info["building_level"].Value<int>();
+			}
 		}
-
 	}
 
 	/// <summary>
@@ -48,11 +49,14 @@ public class Tile
 	/// <param name="t_info">Tile information in JToken object.</param>
 	public Tile (JToken t_info)
 	{
-		id = t_info ["tile_id"].Value<string> ();
-		type = t_info ["tile_type"].Value<int> ();
+		if (t_info != null) {
+			id = t_info ["tile_id"].Value<string> ();
+			type = t_info ["tile_type"].Value<int> ();
+		}
 
 		//Buildings
-		building = new Building (t_info["player_building"]);
-
+		if (t_info["player_building"] != null){
+			building = new Building (t_info["player_building"]);
+		}
 	}
 }

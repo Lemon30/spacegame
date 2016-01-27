@@ -25,17 +25,23 @@ public class Planet {
 	/// </summary>
 	/// <param name="planet_info">Gets planet information as JToken object.</param>
 	public Planet (JToken planet_info) { 
-		name = planet_info ["planet_name"].Value<string>();
+		if (planet_info ["planet_name"] != null) {
+			name = planet_info ["planet_name"].Value<string>();
+		}
 
 		//Coordinates of a planet
-		coordinates.Add(planet_info["planet_coordinates"]["planet_x"].Value<int>());
-		coordinates.Add(planet_info["planet_coordinates"]["planet_y"].Value<int>());
-		coordinates.Add(planet_info["planet_coordinates"]["planet_z"].Value<int>());
-
+		if (planet_info ["planet_coordinates"] != null) {
+			coordinates.Add(planet_info["planet_coordinates"]["planet_x"].Value<int>());
+			coordinates.Add(planet_info["planet_coordinates"]["planet_y"].Value<int>());
+			coordinates.Add(planet_info["planet_coordinates"]["planet_z"].Value<int>());
+		}
+			
 		//Satellites
-		var sat_list = planet_info["planet_satellites"].Value<JArray>();
-		foreach (var satellite in sat_list) {
-			satellites.Add (new Satellite (satellite));
+		if (planet_info ["planet_satellites"] != null) {
+			var sat_list = planet_info ["planet_satellites"].Value<JArray> ();
+			foreach (var satellite in sat_list) {
+				satellites.Add (new Satellite (satellite));
+			}
 		}
 
 		//Planet owner
@@ -46,9 +52,13 @@ public class Planet {
 		}
 
 		//Planet tiles
-		var tile_list = planet_info["planet_tiles"].Value<JArray>();
-		foreach (var tile in tile_list) {
-			tiles.Add(new Tile(tile));
+		if (planet_info["planet_tiles"] != null){
+			var tile_list = planet_info["planet_tiles"].Value<JArray>();
+			if (tile_list != null) {
+				foreach (var tile in tile_list) {
+					tiles.Add(new Tile(tile));
+				}
+			}
 		}
 	}
 }

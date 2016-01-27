@@ -60,22 +60,29 @@ public class Star : CouchDocument {
 		base.ReadJson (obj);
 
 		// Basic information.
-		name = obj ["star_name"].Value<string> ();
-		var coor = obj ["star_coordinates"].Value<JObject> ();
+		if (obj ["star_name"] != null){
+			name = obj ["star_name"].Value<string> ();
+		}
 
-		coordinates.Add (coor["star_x"].Value<int> ());
-		coordinates.Add (coor["star_y"].Value<int> ());
-		coordinates.Add (coor["star_z"].Value<int> ());
+		if (obj ["star_coordinates"] != null) {
+			var coor = obj ["star_coordinates"].Value<JObject> ();
+
+			coordinates.Add (coor["star_x"].Value<int> ());
+			coordinates.Add (coor["star_y"].Value<int> ());
+			coordinates.Add (coor["star_z"].Value<int> ());
+		}
 
 		// Planet information parsing.
-		var planet_list = obj ["planets"].Value<JArray> ();
-		foreach (var planet in planet_list) {
-			// If do not need any sublevel information, only names will be parsed.
-			if (!is_pinfo_needed) {
-				planet_names.Add (planet ["planet_name"].Value<string> ());
-			} else {
-				// Otherwise new planet classes will be derived.
-				planets.Add (new Planet (planet));
+		if (obj ["planets"] != null){
+			var planet_list = obj ["planets"].Value<JArray> ();
+			foreach (var planet in planet_list) {
+				// If do not need any sublevel information, only names will be parsed.
+				if (!is_pinfo_needed) {
+					planet_names.Add (planet ["planet_name"].Value<string> ());
+				} else {
+					// Otherwise new planet classes will be derived.
+					planets.Add (new Planet (planet));
+				}
 			}
 		}
 	}

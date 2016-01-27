@@ -30,8 +30,12 @@ public class Satellite
 		/// </summary>
 		/// <param name="f_info">JToken object which holds facility information.</param>
 		public Facility(JToken f_info){
-			name = f_info["facility_name"].Value<string>();
-			type = f_info["facility_type"].Value<string>();
+			if (f_info["facility_name"] != null){
+				name = f_info["facility_name"].Value<string>();
+			}
+			if (f_info["facility_type"] != null){
+				type = f_info["facility_type"].Value<string>();
+			}
 		}
 	}
 
@@ -40,11 +44,14 @@ public class Satellite
 	/// </summary>
 	/// <param name="s_info">Satellite information as JToken object.</param>
 	public Satellite(JToken s_info){
-		name = s_info ["satellite_name"].Value<string> ();
-		type = s_info ["satellite_type"].Value<string> ();
-
+		if (s_info ["satellite_name"] != null) {
+			name = s_info ["satellite_name"].Value<string> ();
+		}
+		if (s_info ["satellite_type"] != null) {
+			type = s_info ["satellite_type"].Value<string> ();
+		}
+			
 		//Facilities
-		//Debug.Log(s_info["satellite_facilities"].Value<string>());
 		if (s_info["satellite_facilities"] != null){
 			var facility_list = s_info["satellite_facilities"].Value<JArray>();
 			foreach (var facility in facility_list) {

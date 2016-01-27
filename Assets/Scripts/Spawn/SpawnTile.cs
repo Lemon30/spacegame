@@ -30,8 +30,10 @@ public class SpawnTile : MonoBehaviour {
 
 		newTile.GetComponent<BoxCollider>().size = tileSprite.bounds.size;
 		textObject = newTile.GetComponentInChildren<TextMesh> ();
-		textObject.text = newTile.name +
-			"\n" + createTile.building.name + "," + createTile.building.level;
+		textObject.text = newTile.name + "\n";
+		if (createTile.building != null) {
+			textObject.text += createTile.building.name + "," + createTile.building.level;
+		}
 		textObject.color = Color.cyan;
 	}
 
