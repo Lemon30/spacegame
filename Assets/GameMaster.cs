@@ -16,10 +16,38 @@ public class GameMaster : MonoBehaviour {
 	// Don't forget to put the GameMaster prefab in every scene
 	public static GameMaster gameMaster;
 
+	// Global stars list
+	public IEnumerable<Star> stars;
+
 	// Global home planet and its tiles' data
 	public Planet myPlanet;
 	public List<Tile> myTiles;
 
+	// Global resource variables
+	// Resource owned for selected planet
+	public int titaniumVal = 0;
+	public int mineralVal = 0;
+	public int luminiteVal = 0;
+	// Resource max limit for selected planet
+	public int titaniumLimit = 500;
+	public int mineralLimit = 200;
+	public int luminiteLimit = 100;
+	// Resource generation rate for selected planet
+	public int titaniumRate = 2;
+	public int mineralRate = 1;
+	public int luminiteRate = 0;
+
+	void UpdateResources(){
+		titaniumVal = titaniumVal + titaniumRate;
+		if (titaniumVal > titaniumLimit)
+			titaniumVal = titaniumLimit;
+		mineralVal = mineralVal + mineralRate;
+		if (mineralVal > mineralLimit)
+			mineralVal = mineralLimit;
+		luminiteVal = luminiteVal + luminiteRate;
+		if (luminiteVal > luminiteLimit)
+			luminiteVal = luminiteLimit;
+	}
 
 	// Use this for initialization
 	void Awake () {
@@ -34,6 +62,10 @@ public class GameMaster : MonoBehaviour {
 		var server = new CouchServer (db_host, db_port);
 		var database = server.GetDatabase (db);
 
+		// Fetch all stars for the galaxy generation
+		stars = database.GetAllDocuments<Star>();
+
+
 		// Fetch the home planet details from the database
 		// and create a global planet object called myPlanet
 
@@ -41,14 +73,22 @@ public class GameMaster : MonoBehaviour {
 		// then it is necessary that a Star object to be created.
 		// starID should be recognized from beginning and it should be 
 		// known that which plaet we are on.
-		var starID = "star-1";
-		var currentStar = database.GetDocument<Star> (starID);
+		string starID = "star-1"; // Subject to change -> string to int
+		Star currentStar = database.GetDocument<Star> (starID);
 
 		// Get planet from current selected star.
-		var currentPlanet = currentStar.planets [0];
-		// Debug log for testing.
-		Debug.Log(currentPlanet.name);
+		Planet currentPlanet = currentStar.planets [2];
+		myPlanet = currentPlanet;
+		myTiles = currentPlanet.tiles;
+		foreach (Tile tile in myTiles) {
+			
+		}
+
+		// Start Resource Generation
+		InvokeRepeating("UpdateResources", 0, 5);
 	}
+
+
 }
 
 /*using UnityEngine;

@@ -115,8 +115,8 @@ MonoBehaviour:
   starPrefab: {fileID: 179670, guid: a0562171d55137945b0600fdbf38de0e, type: 2}
   starSprites:
   - {fileID: 21300000, guid: d678d621dc930d5439a2a65d31eb606a, type: 3}
-  minDist: -200
-  maxDist: 200
+  minDist: 0
+  maxDist: 100
   numberOfStars: 1000
 --- !u!4 &930635683
 Transform:
