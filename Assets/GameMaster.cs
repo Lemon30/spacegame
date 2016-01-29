@@ -80,6 +80,10 @@ public class GameMaster : MonoBehaviour {
 		Planet currentPlanet = currentStar.planets [2];
 		myPlanet = currentPlanet;
 		myTiles = currentPlanet.tiles;
+
+		// Debug for resources 
+		// Debug.Log ("ANANYANIMDAXXX: " + currentPlanet.resources[0].resourceName + currentPlanet.resources[0].resourceTotal);
+
 		foreach (Tile tile in myTiles) {
 			
 		}

@@ -17,6 +17,8 @@ public class Planet {
 	public List<Satellite> satellites = new List<Satellite> ();
 	public string owner;
 	public List<Tile> tiles = new List<Tile>();
+	public List<Resource> resources = new List<Resource> ();
+	private string[] resource_names = {"titanium", "luminite", "mineral"};
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Planet"/> class.
@@ -58,6 +60,13 @@ public class Planet {
 				foreach (var tile in tile_list) {
 					tiles.Add(new Tile(tile));
 				}
+			}
+		}
+
+		//Planet resources
+		if (planet_info["resources"] != null){
+			foreach (var res_name in resource_names) {
+				resources.Add (new Resource(planet_info["resources"], res_name));
 			}
 		}
 	}

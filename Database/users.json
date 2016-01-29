@@ -1,0 +1,14 @@
+{
+   "_id": "user-1",
+   "user_name": "ananjojuk",
+   "user_mail": "anan@yanimda.net",
+   "password":  "insert_hash_codehere",
+   "resources": [
+		{	
+			"titanium": 20,
+			"luminite": 50,
+			"mineral": 100
+		}
+	],
+	"filo":[]
+}

@@ -4,7 +4,15 @@
    "star_name": "Anan",
    "planets": [
        {
-           "planet_name": "Anan-1",
+            "planet_id": "star-1-planet-1",
+            "planet_name": "Anan-1",
+            "resources": [
+                { 
+                  "titanium": 20,
+                  "luminite": 50,
+                  "mineral": 100
+                }
+            ],
            "planet_coordinates": {
                "planet_x": 0,
                "planet_y": 0,
@@ -55,7 +63,15 @@
            ]
        },
        {
+           "planet_id": "star-1-planet-2",
            "planet_name": "Anan-2",
+           "resources": [
+                { 
+                  "titanium": 20,
+                  "luminite": 50,
+                  "mineral": 100
+                }
+            ],
            "planet_coordinates": {
                "planet_x": 0,
                "planet_y": 0,
@@ -106,7 +122,15 @@
            ]
        },
        {
+           "planet_id": "star-1-planet-3",
            "planet_name": "Anan-3",
+           "resources": [
+                { 
+                  "titanium": 20,
+                  "luminite": 50,
+                  "mineral": 100
+                }
+            ],
            "planet_coordinates": {
                "planet_x": 0,
                "planet_y": 0,
