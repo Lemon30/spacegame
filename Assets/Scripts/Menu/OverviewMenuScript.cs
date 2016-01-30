@@ -5,6 +5,7 @@ using System.Collections;
 public class OverviewMenuScript : MonoBehaviour {
 
 	public Text resourcesText;
+	public Text planetTitleText;
 
 	public void changeScene( string sceneName ){
 		Application.LoadLevel ( sceneName ); // Says that LoadLevel is obsolete, change later
@@ -30,7 +31,10 @@ public class OverviewMenuScript : MonoBehaviour {
 			Transform childTrans = trans.GetChild (i);
 			if (childTrans.gameObject.tag == "ResourcesText")
 				resourcesText = childTrans.gameObject.GetComponent<Text> ();
+			else if (childTrans.gameObject.tag == "PlanetTitleText")
+				planetTitleText = childTrans.gameObject.GetComponent<Text> ();
 		}
+		planetTitleText.text = GameMaster.gameMaster.myPlanet.name;
 	}
 
 	// Update is called once per frame

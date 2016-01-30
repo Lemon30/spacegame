@@ -23,6 +23,10 @@ public class GameMaster : MonoBehaviour {
 	public Planet myPlanet;
 	public List<Tile> myTiles;
 
+	// Globals for selected objects (make em default to yours later=
+	public Star selectedStar;
+	public Planet selectedPlanet;
+
 	// Global resource variables
 	// Resource owned for selected planet
 	public int titaniumVal = 0;

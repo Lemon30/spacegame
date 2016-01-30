@@ -7,6 +7,7 @@ public class SpawnStar : MonoBehaviour {
 	public GameObject starPrefab;
 	public Sprite[] starSprites;
 	TextMesh textObject;
+	public SpawnSolarSystem spawnSolarSystem;
 
 	public void CreateStar(Star createStar){
 		// int starType = createStar.type;
@@ -26,7 +27,7 @@ public class SpawnStar : MonoBehaviour {
 		//newStar.GetComponent<Starx>().starName = starName; //Obsolete
 		newStar.GetComponent<SpriteRenderer> ().sprite = starSprite;
 
-		newStar.GetComponent<BoxCollider2D>().size = starSprite.bounds.size;
+		newStar.GetComponent<BoxCollider>().size = starSprite.bounds.size / 2;  //For some reason, this doesn't take scale into account
 		textObject = newStar.GetComponentInChildren<TextMesh> ();
 		textObject.text = "\t" + newStar.name +
 						"\n\t" + starInfo;
@@ -34,12 +35,27 @@ public class SpawnStar : MonoBehaviour {
 	}
 
 	void Start(){
-
 		IEnumerator<Star> stars_iter = GameMaster.gameMaster.stars.GetEnumerator ();
 		while (stars_iter.MoveNext ()) {
 			Star star = stars_iter.Current;
 			CreateStar (star);
 		}
+	}
 
+	void Update(){
+		if (Input.GetMouseButtonDown(0)) {
+			RaycastHit hit;
+			if (!Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hit))
+				return;
+			BoxCollider col = hit.collider as BoxCollider;
+			if (col == null)
+				return;
+			Transform hitTransform = hit.collider.transform;
+			Debug.Log (hitTransform.name);
+			//Application.LoadLevel ("Overview"); //Change to solar system,
+
+			//GameMaster.gameMaster.selectedStar = hitTransform.GetComponentInParent<Star>(); Cant do nothin
+
+		}
 	}
 }
