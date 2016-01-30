@@ -7,7 +7,7 @@ using System.Collections;
 /// </summary>
 public class SpawnStarHelper : MonoBehaviour {
 
-	public Star spawnedObj { get; set; }
+	public Star spawnedObj;
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="SpawnStarHelper"/> class.
