@@ -9,17 +9,17 @@ public class SpawnStar : MonoBehaviour {
 	TextMesh textObject;
 	public SpawnSolarSystem spawnSolarSystem;
 
-	public void CreateStar(Star createStar){
+	public void CreateStar(SpawnStarHelper createStar){
 		// int starType = createStar.type;
 		int starType = 0; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
 		Sprite starSprite = starSprites[starType];
 
-		string starName = createStar.name;
+		string starName = createStar.spawnedObj.name;
 		//string starInfo = createStar.info;
 		string starInfo = "Tita"; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
 
-		int starX = createStar.coordinates [0];
-		int starY = createStar.coordinates [1];
+		int starX = createStar.spawnedObj.coordinates [0];
+		int starY = createStar.spawnedObj.coordinates [1];
 
 		GameObject newStar = (GameObject)Instantiate (starPrefab, new Vector3 (starX, starY, 0), Quaternion.identity);
 
@@ -38,7 +38,10 @@ public class SpawnStar : MonoBehaviour {
 		IEnumerator<Star> stars_iter = GameMaster.gameMaster.stars.GetEnumerator ();
 		while (stars_iter.MoveNext ()) {
 			Star star = stars_iter.Current;
-			CreateStar (star);
+			SpawnStarHelper uStar = gameObject.AddComponent<SpawnStarHelper> ();
+			uStar.spawnedObj = star;
+			Debug.Log ("ANANYANIMDA:x" + uStar.spawnedObj.name);
+			CreateStar (uStar);
 		}
 	}
 
@@ -53,9 +56,9 @@ public class SpawnStar : MonoBehaviour {
 			Transform hitTransform = hit.collider.transform;
 			Debug.Log (hitTransform.name);
 			//Application.LoadLevel ("Overview"); //Change to solar system,
-
-			//GameMaster.gameMaster.selectedStar = hitTransform.GetComponentInParent<Star>(); Cant do nothin
-
+		
+			GameMaster.gameMaster.selectedStar = hitTransform.gameObject.GetComponentInParent<SpawnStarHelper> (); //Cant do nothin
+			Debug.Log("ANANZAAAAAAXXX::" + GameMaster.gameMaster.selectedStar.spawnedObj);
 		}
 	}
 }

@@ -87,3 +87,5 @@ public class Star : CouchDocument {
 		}
 	}
 }
+
+

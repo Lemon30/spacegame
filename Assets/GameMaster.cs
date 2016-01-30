@@ -24,7 +24,7 @@ public class GameMaster : MonoBehaviour {
 	public List<Tile> myTiles;
 
 	// Globals for selected objects (make em default to yours later=
-	public Star selectedStar;
+	public SpawnStarHelper selectedStar;
 	public Planet selectedPlanet;
 
 	// Global resource variables
@@ -68,8 +68,7 @@ public class GameMaster : MonoBehaviour {
 
 		// Fetch all stars for the galaxy generation
 		stars = database.GetAllDocuments<Star>();
-
-
+			
 		// Fetch the home planet details from the database
 		// and create a global planet object called myPlanet
 
