@@ -8,7 +8,7 @@ public class SpawnTile : MonoBehaviour {
 	public Sprite[] tileSprites;
 	TextMesh textObject;
 
-	public void CreateTile(Tile createTile){
+	public void CreateTile(TileInfo createTile){
 		int tileType = createTile.type;
 		Debug.Log (tileType);
 		//int tileType = 0; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
@@ -38,7 +38,7 @@ public class SpawnTile : MonoBehaviour {
 	}
 
 	void Start(){
-		foreach( Tile tile in GameMaster.gameMaster.myTiles ){
+		foreach( TileInfo tile in GameMaster.gameMaster.myTiles ){
 			CreateTile (tile);
 			Debug.Log ("Created tita");
 		}

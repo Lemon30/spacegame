@@ -11,41 +11,41 @@ using Newtonsoft.Json.Linq;
 /// from database, this class should be instanciated. Every other database attribute is 
 /// called from inside of this class.
 /// </summary>
-public class Star : CouchDocument {
+public class StarInfo : CouchDocument {
 	public string name;
 
 	public List<string> stars;
 	public List<string> planet_names;
-	public List<Planet> planets;
+	public List<PlanetInfo> planets;
 	public List<int> coordinates;
 
 	public bool is_pinfo_needed;
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="Star"/> class.
+	/// Initializes a new instance of the <see cref="StarInfo"/> class.
 	/// There should be at least one default constructor in order to
 	/// Divan Framework works.
 	/// </summary>
-	public Star(){
+	public StarInfo(){
 		is_pinfo_needed = true;
 
 		stars = new List<string> ();
-		planets = new List<Planet> ();
+		planets = new List<PlanetInfo> ();
 		planet_names = new List<string> ();
 		coordinates = new List<int> ();
 	}
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="Star"/> class.
+	/// Initializes a new instance of the <see cref="StarInfo"/> class.
 	/// This time it enables developer to hide inner planet information 
 	/// or not. It prevents unnecessary parsing for super-level drawing.
 	/// </summary>
 	/// <param name="pinfo">If set to <c>true</c>, it parses into sublevels, otherwise not.</param>
-	public Star(bool pinfo){
+	public StarInfo(bool pinfo){
 		is_pinfo_needed = pinfo;
 
 		stars = new List<string> ();
-		planets = new List<Planet> ();
+		planets = new List<PlanetInfo> ();
 		planet_names = new List<string> ();
 		coordinates = new List<int> ();
 	}
@@ -81,7 +81,7 @@ public class Star : CouchDocument {
 					planet_names.Add (planet ["planet_name"].Value<string> ());
 				} else {
 					// Otherwise new planet classes will be derived.
-					planets.Add (new Planet (planet));
+					planets.Add (new PlanetInfo (planet));
 				}
 			}
 		}

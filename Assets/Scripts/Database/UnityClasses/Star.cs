@@ -5,15 +5,15 @@ using System.Collections;
 /// Generates Unity3D compatible versions of
 /// database objects.
 /// </summary>
-public class SpawnStarHelper : MonoBehaviour {
+public class Star : MonoBehaviour {
 
-	public Star spawnedObj;
+	public StarInfo spawnedObj;
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="SpawnStarHelper"/> class.
+	/// Initializes a new instance of the <see cref="Star"/> class.
 	/// </summary>
 	/// <param name="obj">Original Star object.</param>
-	public SpawnStarHelper(Star obj){
+	public Star(StarInfo obj){
 		spawnedObj = obj;
 	}
 }

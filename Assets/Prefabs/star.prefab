@@ -27,6 +27,7 @@ GameObject:
   - 4: {fileID: 417838}
   - 212: {fileID: 21248048}
   - 65: {fileID: 6528658}
+  - 114: {fileID: 11443022}
   m_Layer: 0
   m_Name: star
   m_TagString: Untagged
@@ -118,6 +119,17 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &11443022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766a27a918c01c14eac76f1f56adc9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21248048
 SpriteRenderer:
   m_ObjectHideFlags: 1

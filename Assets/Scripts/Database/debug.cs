@@ -19,8 +19,8 @@ public class debug : MonoBehaviour {
 		var database = server.GetDatabase (db);
 
 		// Gets entire database. Use GetDocuments("id"); for getting specific document.
-		IEnumerable<Star> stars = database.GetAllDocuments<Star>();
-		IEnumerator<Star> stars_iter = stars.GetEnumerator ();
+		IEnumerable<StarInfo> stars = database.GetAllDocuments<StarInfo>();
+		IEnumerator<StarInfo> stars_iter = stars.GetEnumerator ();
 
 		//iterates thourgh documents
 		while (stars_iter.MoveNext()) {

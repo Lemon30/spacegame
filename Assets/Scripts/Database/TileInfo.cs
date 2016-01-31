@@ -11,7 +11,7 @@ using Newtonsoft.Json.Linq;
 /// When planets will be drawn, they use this information to
 /// generate tiles.
 /// </summary>
-public class Tile
+public class TileInfo
 {
 	// Basic information.
 	public string id;
@@ -30,7 +30,7 @@ public class Tile
 		public int level;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Tile+Building"/> class.
+		/// Initializes a new instance of the <see cref="TileInfo+Building"/> class.
 		/// </summary>
 		/// <param name="b_info">Building information in JToken object.</param>
 		public Building(JToken b_info){
@@ -44,10 +44,10 @@ public class Tile
 	}
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="Tile"/> class.
+	/// Initializes a new instance of the <see cref="TileInfo"/> class.
 	/// </summary>
 	/// <param name="t_info">Tile information in JToken object.</param>
-	public Tile (JToken t_info)
+	public TileInfo (JToken t_info)
 	{
 		if (t_info != null) {
 			id = t_info ["tile_id"].Value<string> ();

@@ -46,7 +46,7 @@ public class OverviewMenuScript : MonoBehaviour {
 
 	void OnGUI(){
 		int tilePlace = 0;
-		foreach (Tile tile in GameMaster.gameMaster.myTiles) {
+		foreach (TileInfo tile in GameMaster.gameMaster.myTiles) {
 			if (tile.building != null) {
 				if (GUI.Button (new Rect (10, tilePlace, 150, 30), "Id: " + tile.id + " " + tile.building.name + "," + tile.building.level)) {
 					tile.building.level++;

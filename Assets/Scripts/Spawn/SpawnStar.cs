@@ -14,7 +14,7 @@ public class SpawnStar : MonoBehaviour {
 	/// in this class. If something will be added upon the stars then it should be hook into the star prefab.
 	/// </summary>
 	/// <param name="createStar">Star information.</param>
-	public void CreateStar(Star createStar){
+	public void CreateStar(StarInfo createStar){
 		// int starType = createStar.type;
 		int starType = 0; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
 		Sprite starSprite = starSprites[starType];
@@ -31,7 +31,7 @@ public class SpawnStar : MonoBehaviour {
 		//newStar.GetComponent<Starx>().starName = starName; //Obsolete
 
 		// Attached components unto the prefab.
-		newStar.GetComponent<SpawnStarHelper>().spawnedObj = createStar;
+		newStar.GetComponent<Star>().spawnedObj = createStar;
 		newStar.GetComponent<SpriteRenderer> ().sprite = starSprite;
 		newStar.GetComponent<BoxCollider>().size = starSprite.bounds.size / 2;  //For some reason, this doesn't take scale into account
 
@@ -42,9 +42,9 @@ public class SpawnStar : MonoBehaviour {
 	}
 
 	void Start(){
-		IEnumerator<Star> stars_iter = GameMaster.gameMaster.stars.GetEnumerator ();
+		IEnumerator<StarInfo> stars_iter = GameMaster.gameMaster.stars.GetEnumerator ();
 		while (stars_iter.MoveNext ()) {
-			Star star = stars_iter.Current;;
+			StarInfo star = stars_iter.Current;;
 			CreateStar (star);
 		}
 	}
@@ -61,7 +61,7 @@ public class SpawnStar : MonoBehaviour {
 			Debug.Log (hitTransform.name);
 			//Application.LoadLevel ("Overview"); //Change to solar system,
 		
-			GameMaster.gameMaster.selectedStar = hitTransform.GetComponent<SpawnStarHelper> ();
+			GameMaster.gameMaster.selectedStar = hitTransform.GetComponent<Star> ();
 			Debug.Log("ANANZAAAAAAXXX::" + GameMaster.gameMaster.selectedStar.spawnedObj.name);
 		}
 	}

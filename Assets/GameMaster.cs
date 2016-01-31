@@ -17,15 +17,15 @@ public class GameMaster : MonoBehaviour {
 	public static GameMaster gameMaster;
 
 	// Global stars list
-	public IEnumerable<Star> stars;
+	public IEnumerable<StarInfo> stars;
 
 	// Global home planet and its tiles' data
-	public Planet myPlanet;
-	public List<Tile> myTiles;
+	public PlanetInfo myPlanet;
+	public List<TileInfo> myTiles;
 
 	// Globals for selected objects (make em default to yours later=
-	public SpawnStarHelper selectedStar;
-	public Planet selectedPlanet;
+	public Star selectedStar;
+	public PlanetInfo selectedPlanet;
 
 	// Global resource variables
 	// Resource owned for selected planet
@@ -67,7 +67,7 @@ public class GameMaster : MonoBehaviour {
 		var database = server.GetDatabase (db);
 
 		// Fetch all stars for the galaxy generation
-		stars = database.GetAllDocuments<Star>();
+		stars = database.GetAllDocuments<StarInfo>();
 			
 		// Fetch the home planet details from the database
 		// and create a global planet object called myPlanet
@@ -77,17 +77,17 @@ public class GameMaster : MonoBehaviour {
 		// starID should be recognized from beginning and it should be 
 		// known that which plaet we are on.
 		string starID = "star-1"; // Subject to change -> string to int
-		Star currentStar = database.GetDocument<Star> (starID);
+		StarInfo currentStar = database.GetDocument<StarInfo> (starID);
 
 		// Get planet from current selected star.
-		Planet currentPlanet = currentStar.planets [2];
+		PlanetInfo currentPlanet = currentStar.planets [2];
 		myPlanet = currentPlanet;
 		myTiles = currentPlanet.tiles;
 
 		// Debug for resources 
 		// Debug.Log ("ANANYANIMDAXXX: " + currentPlanet.resources[0].resourceName + currentPlanet.resources[0].resourceTotal);
 
-		foreach (Tile tile in myTiles) {
+		foreach (TileInfo tile in myTiles) {
 			
 		}
 

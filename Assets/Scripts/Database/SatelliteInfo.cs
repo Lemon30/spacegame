@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 /// <summary>
 /// Satellite class fo encapsulating planet's satellite information.
 /// </summary>
-public class Satellite
+public class SatelliteInfo
 {
 	public string name;
 	public string type;
@@ -26,7 +26,7 @@ public class Satellite
 		public string type;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Satellite+Facility"/> class.
+		/// Initializes a new instance of the <see cref="SatelliteInfo+Facility"/> class.
 		/// </summary>
 		/// <param name="f_info">JToken object which holds facility information.</param>
 		public Facility(JToken f_info){
@@ -40,10 +40,10 @@ public class Satellite
 	}
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="Satellite"/> class.
+	/// Initializes a new instance of the <see cref="SatelliteInfo"/> class.
 	/// </summary>
 	/// <param name="s_info">Satellite information as JToken object.</param>
-	public Satellite(JToken s_info){
+	public SatelliteInfo(JToken s_info){
 		if (s_info ["satellite_name"] != null) {
 			name = s_info ["satellite_name"].Value<string> ();
 		}

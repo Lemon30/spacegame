@@ -10,23 +10,23 @@ using Newtonsoft.Json.Linq;
 /// Planet class for acquiring and writing planet information
 /// to the database. It does not work without its parent class
 /// </summary>
-public class Planet {
+public class PlanetInfo {
 
 	public string name;
 	public List<int> coordinates = new List<int>();
-	public List<Satellite> satellites = new List<Satellite> ();
+	public List<SatelliteInfo> satellites = new List<SatelliteInfo> ();
 	public string owner;
-	public List<Tile> tiles = new List<Tile>();
-	public List<Resource> resources = new List<Resource> ();
+	public List<TileInfo> tiles = new List<TileInfo>();
+	public List<ResourceInfo> resources = new List<ResourceInfo> ();
 	private string[] resource_names = {"titanium", "luminite", "mineral"};
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="Planet"/> class.
-	/// It initializes <see cref="Planet"/> class by parsing JTokens
+	/// Initializes a new instance of the <see cref="PlanetInfo"/> class.
+	/// It initializes <see cref="PlanetInfo"/> class by parsing JTokens
 	/// into strings and ints.
 	/// </summary>
 	/// <param name="planet_info">Gets planet information as JToken object.</param>
-	public Planet (JToken planet_info) { 
+	public PlanetInfo (JToken planet_info) { 
 		if (planet_info ["planet_name"] != null) {
 			name = planet_info ["planet_name"].Value<string>();
 		}
@@ -42,7 +42,7 @@ public class Planet {
 		if (planet_info ["planet_satellites"] != null) {
 			var sat_list = planet_info ["planet_satellites"].Value<JArray> ();
 			foreach (var satellite in sat_list) {
-				satellites.Add (new Satellite (satellite));
+				satellites.Add (new SatelliteInfo (satellite));
 			}
 		}
 
@@ -58,7 +58,7 @@ public class Planet {
 			var tile_list = planet_info["planet_tiles"].Value<JArray>();
 			if (tile_list != null) {
 				foreach (var tile in tile_list) {
-					tiles.Add(new Tile(tile));
+					tiles.Add(new TileInfo(tile));
 				}
 			}
 		}
@@ -66,7 +66,7 @@ public class Planet {
 		//Planet resources
 		if (planet_info["resources"] != null){
 			foreach (var res_name in resource_names) {
-				resources.Add (new Resource(planet_info["resources"], res_name));
+				resources.Add (new ResourceInfo(planet_info["resources"], res_name));
 			}
 		}
 	}
