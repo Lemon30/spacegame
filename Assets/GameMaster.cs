@@ -12,6 +12,9 @@ public class GameMaster : MonoBehaviour {
 	const int db_port = 5984;
 	const string db = "universe";
 
+    // Database object
+    public ICouchDatabase database;
+
 	// Global GameMaster object for data persistance
 	// Don't forget to put the GameMaster prefab in every scene
 	public static GameMaster gameMaster;
@@ -64,10 +67,7 @@ public class GameMaster : MonoBehaviour {
 		
 		// Establish connection with the database
 		var server = new CouchServer (db_host, db_port);
-		var database = server.GetDatabase (db);
-
-		// Fetch all stars for the galaxy generation
-		stars = database.GetAllDocuments<StarInfo>();
+		database = server.GetDatabase (db);
 			
 		// Fetch the home planet details from the database
 		// and create a global planet object called myPlanet
@@ -75,12 +75,17 @@ public class GameMaster : MonoBehaviour {
 		// If some attribute which belongs to a star will be called, 
 		// then it is necessary that a Star object to be created.
 		// starID should be recognized from beginning and it should be 
-		// known that which plaet we are on.
+		// known that which planet we are on.
 		string starID = "star-1"; // Subject to change -> string to int
-		StarInfo currentStar = database.GetDocument<StarInfo> (starID);
+        Star currentStar = gameObject.AddComponent<Star>();
+        currentStar.GetStar(database, starID);
 
-		// Get planet from current selected star.
-		PlanetInfo currentPlanet = currentStar.planets [2];
+        // Fetch all stars for the galaxy generation
+        currentStar.GetAllStars(database);
+        stars = currentStar.starDBIter;
+
+        // Get planet from current selected star.
+        PlanetInfo currentPlanet = currentStar.starInfo.planets [2];
 		myPlanet = currentPlanet;
 		myTiles = currentPlanet.tiles;
 

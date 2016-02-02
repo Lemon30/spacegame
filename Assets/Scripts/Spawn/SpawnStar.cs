@@ -14,24 +14,24 @@ public class SpawnStar : MonoBehaviour {
 	/// in this class. If something will be added upon the stars then it should be hook into the star prefab.
 	/// </summary>
 	/// <param name="createStar">Star information.</param>
-	public void CreateStar(StarInfo createStar){
+	public void CreateStar(Star createStar){
 		// int starType = createStar.type;
 		int starType = 0; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
 		Sprite starSprite = starSprites[starType];
 
-		string starName = createStar.name;	
+		string starName = createStar.starInfo.name;	
 		//string starInfo = createStar.info;
 		string starInfo = "Tita"; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
 
-		int starX = createStar.coordinates [0];
-		int starY = createStar.coordinates [1];
+		int starX = createStar.starInfo.coordinates [0];
+		int starY = createStar.starInfo.coordinates[1];
 
 		GameObject newStar = (GameObject)Instantiate (starPrefab, new Vector3 (starX, starY, 0), Quaternion.identity);
 		newStar.name = starName;
 		//newStar.GetComponent<Starx>().starName = starName; //Obsolete
 
 		// Attached components unto the prefab.
-		newStar.GetComponent<Star>().spawnedObj = createStar;
+		newStar.GetComponent<Star>().starInfo = createStar.starInfo;
 		newStar.GetComponent<SpriteRenderer> ().sprite = starSprite;
 		newStar.GetComponent<BoxCollider>().size = starSprite.bounds.size / 2;  //For some reason, this doesn't take scale into account
 
@@ -42,9 +42,14 @@ public class SpawnStar : MonoBehaviour {
 	}
 
 	void Start(){
-		IEnumerator<StarInfo> stars_iter = GameMaster.gameMaster.stars.GetEnumerator ();
+        var stars_iter = GameMaster.gameMaster.stars.GetEnumerator();
 		while (stars_iter.MoveNext ()) {
-			StarInfo star = stars_iter.Current;;
+            Star star = gameObject.AddComponent<Star>();
+
+            var db = GameMaster.gameMaster.database;
+            var starID = stars_iter.Current.Id;
+
+            star.GetStar(db, starID);
 			CreateStar (star);
 		}
 	}
@@ -62,7 +67,7 @@ public class SpawnStar : MonoBehaviour {
 			//Application.LoadLevel ("Overview"); //Change to solar system,
 		
 			GameMaster.gameMaster.selectedStar = hitTransform.GetComponent<Star> ();
-			Debug.Log("ANANZAAAAAAXXX::" + GameMaster.gameMaster.selectedStar.spawnedObj.name);
+			Debug.Log("ANANZAAAAAAXXX::" + GameMaster.gameMaster.selectedStar.starInfo.name);
 		}
 	}
 }

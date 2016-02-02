@@ -13,14 +13,14 @@ public class SatelliteInfo
 {
 	public string name;
 	public string type;
-	public List<Facility> facilities = new List<Facility>();
+	public List<FacilityInfo> facilities = new List<FacilityInfo>();
 
 	/// <summary>
 	/// Facility class is inner class for Satellite. It encapsulates
 	/// facility information parsed from JToken object.
 	/// It is meaningless without satellite.
 	/// </summary>
-	public class Facility 
+	public class FacilityInfo 
 	{
 		public string name;
 		public string type;
@@ -29,7 +29,7 @@ public class SatelliteInfo
 		/// Initializes a new instance of the <see cref="SatelliteInfo+Facility"/> class.
 		/// </summary>
 		/// <param name="f_info">JToken object which holds facility information.</param>
-		public Facility(JToken f_info){
+		public FacilityInfo(JToken f_info){
 			if (f_info["facility_name"] != null){
 				name = f_info["facility_name"].Value<string>();
 			}
@@ -55,7 +55,7 @@ public class SatelliteInfo
 		if (s_info["satellite_facilities"] != null){
 			var facility_list = s_info["satellite_facilities"].Value<JArray>();
 			foreach (var facility in facility_list) {
-				facilities.Add (new Facility (facility));
+				facilities.Add (new FacilityInfo (facility));
 			}
 		}
 	}

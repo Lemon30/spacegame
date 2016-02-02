@@ -16,13 +16,13 @@ public class TileInfo
 	// Basic information.
 	public string id;
 	public int type;
-	public Building building;
+	public BuildingInfo building;
 
 	/// <summary>
 	/// Building inner class which will hold building information
 	/// in tile object. Building can only be exists inside of a tile.
 	/// </summary>
-	public class Building 
+	public class BuildingInfo 
 	{
 		public string id;
 		public string name;
@@ -33,7 +33,7 @@ public class TileInfo
 		/// Initializes a new instance of the <see cref="TileInfo+Building"/> class.
 		/// </summary>
 		/// <param name="b_info">Building information in JToken object.</param>
-		public Building(JToken b_info){
+		public BuildingInfo(JToken b_info){
 			if (b_info != null){
 				id = b_info["building_id"].Value<string>();
 				name = b_info["building_name"].Value<string>();
@@ -56,7 +56,7 @@ public class TileInfo
 
 		//Buildings
 		if (t_info["player_building"] != null){
-			building = new Building (t_info["player_building"]);
+			building = new BuildingInfo (t_info["player_building"]);
 		}
 	}
 }
