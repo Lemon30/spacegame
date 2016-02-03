@@ -18,7 +18,7 @@ public class PlanetInfo {
 	public string owner;
 	public List<TileInfo> tiles = new List<TileInfo>();
 	public List<ResourceInfo> resources = new List<ResourceInfo> ();
-	private string[] resource_names = {"titanium", "luminite", "mineral"};
+	private string[] resourceNames = {"titanium", "luminite", "mineral"};
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="PlanetInfo"/> class.
@@ -65,8 +65,8 @@ public class PlanetInfo {
 
 		//Planet resources
 		if (planet_info["resources"] != null){
-			foreach (var res_name in resource_names) {
-				resources.Add (new ResourceInfo(planet_info["resources"], res_name));
+			foreach (var res in resourceNames) {
+				resources.Add (new ResourceInfo(planet_info["resources"], res));
 			}
 		}
 	}

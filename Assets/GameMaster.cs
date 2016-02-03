@@ -23,12 +23,12 @@ public class GameMaster : MonoBehaviour {
 	public IEnumerable<StarInfo> stars;
 
 	// Global home planet and its tiles' data
-	public PlanetInfo myPlanet;
+	public Planet myPlanet;
 	public List<TileInfo> myTiles;
 
 	// Globals for selected objects (make em default to yours later=
 	public Star selectedStar;
-	public PlanetInfo selectedPlanet;
+	public Planet selectedPlanet;
 	public TileInfo selectedTile;
 
 	// Global resource variables
@@ -87,9 +87,10 @@ public class GameMaster : MonoBehaviour {
         stars = currentStar.starDBIter;
 
         // Get planet from current selected star.
-        PlanetInfo currentPlanet = currentStar.starInfo.planets [2]; //select player's planet from db
+        Planet currentPlanet = currentStar.Planets[2];
+        
 		myPlanet = currentPlanet;
-		myTiles = currentPlanet.tiles;
+		myTiles = currentPlanet.planetInfo.tiles;
 
 		// Debug for resources 
 		// Debug.Log ("ANANYANIMDAXXX: " + currentPlanet.resources[0].resourceName + currentPlanet.resources[0].resourceTotal);
