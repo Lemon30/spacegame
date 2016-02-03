@@ -29,6 +29,7 @@ public class GameMaster : MonoBehaviour {
 	// Globals for selected objects (make em default to yours later=
 	public Star selectedStar;
 	public PlanetInfo selectedPlanet;
+	public TileInfo selectedTile;
 
 	// Global resource variables
 	// Resource owned for selected planet
@@ -78,6 +79,7 @@ public class GameMaster : MonoBehaviour {
 		// known that which planet we are on.
 		string starID = "star-1"; // Subject to change -> string to int
         Star currentStar = gameObject.AddComponent<Star>();
+		selectedStar = currentStar;
         currentStar.GetStar(database, starID);
 
         // Fetch all stars for the galaxy generation
@@ -85,7 +87,7 @@ public class GameMaster : MonoBehaviour {
         stars = currentStar.starDBIter;
 
         // Get planet from current selected star.
-        PlanetInfo currentPlanet = currentStar.starInfo.planets [2];
+        PlanetInfo currentPlanet = currentStar.starInfo.planets [2]; //select player's planet from db
 		myPlanet = currentPlanet;
 		myTiles = currentPlanet.tiles;
 

@@ -64,10 +64,17 @@ public class SpawnStar : MonoBehaviour {
 				return;
 			Transform hitTransform = hit.collider.transform;
 			Debug.Log (hitTransform.name);
-			//Application.LoadLevel ("Overview"); //Change to solar system,
 		
-			GameMaster.gameMaster.selectedStar = hitTransform.GetComponent<Star> ();
-			Debug.Log("ANANZAAAAAAXXX::" + GameMaster.gameMaster.selectedStar.starInfo.name);
+			Star star = hitTransform.GetComponent<Star> ();
+
+			var db = GameMaster.gameMaster.database;
+			var starId = star.starInfo.Id;
+
+			star.GetStar (db, starId);
+			GameMaster.gameMaster.selectedStar = star;
+
+			Debug.Log("Opening: " + GameMaster.gameMaster.selectedStar.starInfo.name + " system.");
+			Application.LoadLevel ("SolarSystem");
 		}
 	}
 }

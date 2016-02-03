@@ -54,9 +54,10 @@ public class SpawnTile : MonoBehaviour {
 				return;
 			Transform hitTransform = hit.collider.transform;
 			Debug.Log (hitTransform.name);
-			// Open buildingMenu!!!!
-			// If there is a building menu, open the related menu
-			// Else open the building selection menu
+			GameObject menu = GameObject.FindGameObjectWithTag ("FactoryPanel");
+			menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
+
+			//Rip, can't select tiles
 		}
 	}
 

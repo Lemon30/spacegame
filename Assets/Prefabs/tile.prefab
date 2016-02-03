@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 480224}
   - 212: {fileID: 21265428}
   - 65: {fileID: 6550360}
-  - 114: {fileID: 11441988}
   m_Layer: 0
   m_Name: tile
   m_TagString: Untagged
@@ -119,17 +118,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &11441988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e11cfd1cd7f0864abfe6c302c40ae62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &21265428
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -222,7 +210,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11441988}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: openMenu
@@ -237,12 +225,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: factoryMenu
+      value: FactoryPanel
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11441988}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: openMenu
