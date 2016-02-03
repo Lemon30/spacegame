@@ -87,7 +87,7 @@ public class GameMaster : MonoBehaviour {
         stars = currentStar.starDBIter;
 
         // Get planet from current selected star.
-        Planet currentPlanet = currentStar.Planets[2];
+        Planet currentPlanet = currentStar.planets[2];
         
 		myPlanet = currentPlanet;
 		myTiles = currentPlanet.planetInfo.tiles;

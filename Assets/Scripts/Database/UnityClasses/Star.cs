@@ -17,21 +17,7 @@ public class Star : MonoBehaviour {
     // Variables for information gathering from database.
 	public StarInfo starInfo;
     public IEnumerable<StarInfo> starDBIter;
-    private List<Planet> planets;
-
-    // Internal getter and setter for planets no idea why it give accessibility error.
-    internal List<Planet> Planets
-    {
-        get
-        {
-            return planets;
-        }
-
-        set
-        {
-            planets = value;
-        }
-    }
+    public List<Planet> planets;
 
     /// <summary>
     /// Default constructor for Star object.
@@ -42,6 +28,7 @@ public class Star : MonoBehaviour {
     public Star()
     {
         starInfo = new StarInfo();
+        planets = new List<Planet>();
     }
 
     /// <summary>
@@ -51,7 +38,8 @@ public class Star : MonoBehaviour {
 	public Star(StarInfo obj)
     {
 		starInfo = obj;
-	}
+        planets = new List<Planet>();
+    }
 
     /// <summary>
     /// Gathers all star object and return an iterator which
@@ -76,7 +64,7 @@ public class Star : MonoBehaviour {
         foreach (var planet in starInfo.planets) {
             Planet uPlanet = gameObject.AddComponent<Planet>();
             uPlanet.planetInfo = planet;
-            Planets.Add(uPlanet);
+            planets.Add(uPlanet);
         }
     }
 }
