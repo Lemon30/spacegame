@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766a27a918c01c14eac76f1f56adc9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planets: []
 --- !u!212 &21248048
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,15 +183,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Alignment
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Anchor
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_CharacterSize
-      value: .5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x

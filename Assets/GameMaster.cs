@@ -45,6 +45,10 @@ public class GameMaster : MonoBehaviour {
 	public int mineralRate = 1;
 	public int luminiteRate = 0;
 
+
+	/// <summary>
+	/// Updates the resources of the player's planet.
+	/// </summary>
 	void UpdateResources(){
 		titaniumVal = titaniumVal + titaniumRate;
 		if (titaniumVal > titaniumLimit)
@@ -55,6 +59,15 @@ public class GameMaster : MonoBehaviour {
 		luminiteVal = luminiteVal + luminiteRate;
 		if (luminiteVal > luminiteLimit)
 			luminiteVal = luminiteLimit;
+	}
+
+	/// <summary>
+	/// Updates the resource variables after a change is made
+	/// affecting production.
+	/// </summary>
+	void UpdateResourceGeneration(){
+		// Go over all buildings to recalculate rate and limit
+		// Call whenever necessary
 	}
 
 	// Use this for initialization
@@ -100,7 +113,7 @@ public class GameMaster : MonoBehaviour {
 		}
 
 		// Start Resource Generation
-		InvokeRepeating("UpdateResources", 0, 5);
+		InvokeRepeating("UpdateResources", 0, 1);
 	}
 
 

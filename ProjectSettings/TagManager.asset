@@ -7,6 +7,7 @@ TagManager:
   - PlanetTitleText
   - ResourcesText
   - FactoryPanel
+  - BuildingPanel
   layers:
   - Default
   - TransparentFX

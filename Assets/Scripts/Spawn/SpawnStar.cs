@@ -7,7 +7,6 @@ public class SpawnStar : MonoBehaviour {
 	public GameObject starPrefab;
 	public Sprite[] starSprites;
 	TextMesh textObject;
-	public SpawnSolarSystem spawnSolarSystem;
 
 	/// <summary>
 	/// Creates an instance of star prefab. Stars will be placed according to the info that has been stored 

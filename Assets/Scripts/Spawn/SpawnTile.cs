@@ -54,7 +54,7 @@ public class SpawnTile : MonoBehaviour {
 				return;
 			Transform hitTransform = hit.collider.transform;
 			Debug.Log (hitTransform.name);
-			GameObject menu = GameObject.FindGameObjectWithTag ("FactoryPanel");
+			GameObject menu = GameObject.FindGameObjectWithTag ("BuildingPanel");
 			menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
 
 			//Rip, can't select tiles

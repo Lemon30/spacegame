@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 88ec9a13802800449aaf825aff3aadc7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -313,4 +313,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fc24f5573c68f41af2d73133f9fecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star3DPrefab: {fileID: 107688, guid: d3150c00cce677e46a10ffbf43cb1072, type: 2}
+  star3DPrefab: {fileID: 154238, guid: 464c01f6e23ffdf43bdf6f99c46c1b58, type: 2}
+  planet3DPrefab: {fileID: 117824, guid: 535a35f41e4aaea49b8fdbe650c4188b, type: 2}

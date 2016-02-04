@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 2f04f60bebe23bd448d75b08f4a5ef68
-timeCreated: 1452780250
+timeCreated: 1454609619
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - starPrefab: {fileID: 179670, guid: a0562171d55137945b0600fdbf38de0e, type: 2}
+  - spawnSolarSystem: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
