@@ -8,17 +8,17 @@ public class SpawnTile : MonoBehaviour {
 	public Sprite[] tileSprites;
 	TextMesh textObject;
 
-	public void CreateTile(TileInfo createTile){
-		int tileType = createTile.type;
+	public void CreateTile(Tile createTile){
+		int tileType = createTile.tileInfo.type;
 		Debug.Log (tileType);
 		//int tileType = 0; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
 		Sprite tileSprite = tileSprites[tileType];
 
-		string tileId = createTile.id;
+		string tileId = createTile.tileInfo.id;
 		//string starInfo = createStar.info;
 		//string starInfo = "Tita"; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
 
-		int starX = -10 + System.Int32.Parse( createTile.id ) * 2;
+		int starX = -10 + System.Int32.Parse( createTile.tileInfo.id) * 2;
 		//int starY = System.Int32.Parse( createTile.id ) * 1;
 		int starY = 0;
 
@@ -31,14 +31,14 @@ public class SpawnTile : MonoBehaviour {
 		newTile.GetComponent<BoxCollider>().size = tileSprite.bounds.size;
 		textObject = newTile.GetComponentInChildren<TextMesh> ();
 		textObject.text = newTile.name + "\n";
-		if (createTile.building != null) {
-			textObject.text += createTile.building.name + "," + createTile.building.level;
+		if (createTile.tileInfo.building != null) {
+			textObject.text += createTile.tileInfo.building.name + "," + createTile.tileInfo.building.level;
 		}
 		textObject.color = Color.cyan;
 	}
 
 	void Start(){
-		foreach( TileInfo tile in GameMaster.gameMaster.myTiles ){
+		foreach( Tile tile in GameMaster.gameMaster.myTiles ){
 			CreateTile (tile);
 			Debug.Log ("Created tita");
 		}
