@@ -41,6 +41,20 @@ public class TileInfo
 				level = b_info["building_level"].Value<int>();
 			}
 		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="TileInfo+Building"/> class.
+		/// </summary>
+		/// <param name="newId">Building id.</param>
+		/// <param name="newName">Building name.</param>
+		/// <param name="newType">Building type.</param>
+		/// <param name="newLevel">Building level.</param>
+		public BuildingInfo(string newId, string newName, string newType, int newLevel){
+			id = newId;
+			name = newName;
+			type = newType;
+			level = newLevel;
+		}
 	}
 
 	/// <summary>

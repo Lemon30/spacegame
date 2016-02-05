@@ -25,7 +25,6 @@ public class OverviewMenuScript : MonoBehaviour {
 		for (int i = 0; i < amountOfChildren; i++) {
 			Transform panel = this.transform.GetChild (i);
 			if (panel.gameObject.tag == menuTag)
-				Debug.Log ("TitaOpenMenu" + menuTag);
 				panel.position = new Vector3 (0, 0, 0);
 		}
 	}
@@ -33,7 +32,6 @@ public class OverviewMenuScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		Transform trans = this.GetComponentInParent<Canvas> ().transform;
-		Debug.Log (trans.name);
 		int amountOfChildren = trans.childCount;
 		for (int i = 0; i < amountOfChildren; i++) {
 			Transform childTrans = trans.GetChild (i);

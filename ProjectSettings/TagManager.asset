@@ -11,6 +11,7 @@ TagManager:
   - BackButton
   - star3D
   - planet3D
+  - DestroyButton
   layers:
   - Default
   - TransparentFX

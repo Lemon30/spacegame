@@ -17,4 +17,15 @@ public class TileMenuScript : MonoBehaviour {
 			}
 		}
 	}
+
+	public void destroyBuilding(){
+		string objName = "tile"+ (GameMaster.gameMaster.selectedTile.tileInfo.id);
+		GameMaster.gameMaster.selectedTile.tileInfo.building = null;
+		GameMaster.gameMaster.UpdateResourceGeneration ();
+		GameObject tileObj = GameObject.Find (objName);
+		TextMesh textObject = tileObj.GetComponentInChildren<TextMesh> ();
+		textObject.text = tileObj.name + "\n";
+		GameObject menu = GameObject.FindGameObjectWithTag ("DestroyButton");
+		menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
+	}
 }

@@ -62,7 +62,6 @@ public class SpawnStar : MonoBehaviour {
 			if (col == null)
 				return;
 			Transform hitTransform = hit.collider.transform;
-			Debug.Log (hitTransform.name);
 		
 			Star star = hitTransform.GetComponent<Star> ();
 
@@ -71,8 +70,6 @@ public class SpawnStar : MonoBehaviour {
 
 			star.GetStar (db, starId);
 			GameMaster.gameMaster.selectedStar = star;
-
-			Debug.Log("Opening: " + GameMaster.gameMaster.selectedStar.starInfo.name + " system.");
 
 			hitTransform.GetComponent<SpawnSolarSystem>().Spawn ();
 			Camera.main.transform.position = new Vector3 (-500, 0, -10);

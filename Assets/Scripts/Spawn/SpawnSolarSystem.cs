@@ -12,7 +12,6 @@ public class SpawnSolarSystem : MonoBehaviour {
 
 	public void Spawn() {
 		star = GameMaster.gameMaster.selectedStar;
-		Debug.Log ("Creating the solar system for " + star.starInfo.name );
 
 		// Create the star at the center
 		GameObject newStar = (GameObject)Instantiate (star3DPrefab, new Vector3 (-500, 0, 0), Quaternion.identity);

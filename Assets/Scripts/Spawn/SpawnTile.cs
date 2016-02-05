@@ -10,7 +10,6 @@ public class SpawnTile : MonoBehaviour {
 
 	public void CreateTile(Tile createTile){
 		int tileType = createTile.tileInfo.type;
-		Debug.Log (tileType);
 		//int tileType = 0; // REMOVE THIS AFTER STAR TYPES ARE ADDED TO DB FOR DIFFERENT ICONS
 		Sprite tileSprite = tileSprites[tileType];
 
@@ -44,9 +43,7 @@ public class SpawnTile : MonoBehaviour {
         foreach ( Tile t in GameMaster.gameMaster.myTiles ){
             Tile tile = gameObject.AddComponent<Tile>();
             tile.tileInfo = t.tileInfo;
-            Debug.Log("ANANXXX::" + tile.tileInfo.id);
 			CreateTile (tile);
-			Debug.Log ("Created tita");
 		}
 	}
 
@@ -59,11 +56,19 @@ public class SpawnTile : MonoBehaviour {
 			if (col == null)
 				return;
 			Transform hitTransform = hit.collider.transform;
-			Debug.Log (hitTransform.name);
-			GameObject menu = GameObject.FindGameObjectWithTag ("BuildingPanel");
-			menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
 
-			//Rip, can't select tiles
+			Tile tile = hitTransform.GetComponent<Tile> ();
+		
+			GameMaster.gameMaster.selectedTile = tile;
+
+			if (GameMaster.gameMaster.selectedTile.tileInfo.building == null) {
+				GameObject menu = GameObject.FindGameObjectWithTag ("BuildingPanel");
+				menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
+			} else {
+				GameObject menu = GameObject.FindGameObjectWithTag ("DestroyButton");
+				menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 50);
+
+			}
 		}
 	}
 

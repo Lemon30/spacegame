@@ -65,7 +65,7 @@ public class GameMaster : MonoBehaviour {
 	/// Updates the resource variables after a change is made
 	/// affecting production.
 	/// </summary>
-	void UpdateResourceGeneration(){
+	public void UpdateResourceGeneration(){
 		// Go over all buildings to recalculate rate and limit
 		// Call whenever necessary
 	}
