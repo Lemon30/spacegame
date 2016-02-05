@@ -29,7 +29,7 @@ public class GameMaster : MonoBehaviour {
 	// Globals for selected objects (make em default to yours later=
 	public Star selectedStar;
 	public Planet selectedPlanet;
-	public TileInfo selectedTile;
+	public Tile selectedTile;
 
 	// Global resource variables
 	// Resource owned for selected planet
@@ -101,12 +101,9 @@ public class GameMaster : MonoBehaviour {
 
         // Get planet from current selected star.
         Planet currentPlanet = currentStar.planets[2];
-        
 		myPlanet = currentPlanet;
-		myTiles = currentPlanet.tiles;
 
-		// Debug for resources 
-		// Debug.Log ("ANANYANIMDAXXX: " + currentPlanet.resources[0].resourceName + currentPlanet.resources[0].resourceTotal);
+		// Where iz ma tiles?
 
 		foreach (Tile tile in myTiles) {
 			

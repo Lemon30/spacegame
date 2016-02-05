@@ -8,6 +8,9 @@ TagManager:
   - ResourcesText
   - FactoryPanel
   - BuildingPanel
+  - BackButton
+  - star3D
+  - planet3D
   layers:
   - Default
   - TransparentFX

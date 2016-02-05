@@ -28,6 +28,7 @@ GameObject:
   - 212: {fileID: 21248048}
   - 65: {fileID: 6528658}
   - 114: {fileID: 11443022}
+  - 114: {fileID: 11430172}
   m_Layer: 0
   m_Name: star
   m_TagString: Untagged
@@ -119,6 +120,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &11430172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fc24f5573c68f41af2d73133f9fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  star3DPrefab: {fileID: 154238, guid: 464c01f6e23ffdf43bdf6f99c46c1b58, type: 2}
+  planet3DPrefab: {fileID: 117824, guid: 535a35f41e4aaea49b8fdbe650c4188b, type: 2}
 --- !u!114 &11443022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,6 +235,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: planet3DPrefab
+      value: 
+      objectReference: {fileID: 117824, guid: 535a35f41e4aaea49b8fdbe650c4188b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 179670}

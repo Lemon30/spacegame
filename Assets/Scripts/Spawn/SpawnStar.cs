@@ -73,7 +73,11 @@ public class SpawnStar : MonoBehaviour {
 			GameMaster.gameMaster.selectedStar = star;
 
 			Debug.Log("Opening: " + GameMaster.gameMaster.selectedStar.starInfo.name + " system.");
-			Application.LoadLevel ("SolarSystem");
+
+			hitTransform.GetComponent<SpawnSolarSystem>().Spawn ();
+			Camera.main.transform.position = new Vector3 (-500, 0, -10);
+			GameObject backButton = GameObject.FindGameObjectWithTag ("BackButton");
+			backButton.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 30);
 		}
 	}
 }

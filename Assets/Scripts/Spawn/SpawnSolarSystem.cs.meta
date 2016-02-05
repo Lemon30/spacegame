@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: e0fc24f5573c68f41af2d73133f9fecf
-timeCreated: 1454610443
+timeCreated: 1454664977
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - star3DPrefab: {fileID: 154238, guid: 464c01f6e23ffdf43bdf6f99c46c1b58, type: 2}
+  - planet3DPrefab: {fileID: 117824, guid: 535a35f41e4aaea49b8fdbe650c4188b, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
