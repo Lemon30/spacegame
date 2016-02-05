@@ -34,11 +34,17 @@ public class Planet : MonoBehaviour
     public void GetPlanet(JToken planetToken)
     {
         planetInfo = new PlanetInfo(planetToken);
-        foreach (var tile in planetInfo.tiles) {
+        initTiles();      
+    }
+
+    public void initTiles()
+    {
+        foreach (var tile in planetInfo.tiles)
+        {
             Tile uTile = gameObject.AddComponent<Tile>();
             uTile.tileInfo = tile;
             tiles.Add(uTile);
-        }       
+        }
     }
 }
 

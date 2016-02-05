@@ -103,6 +103,8 @@ public class GameMaster : MonoBehaviour {
         Planet currentPlanet = currentStar.planets[2];
 		myPlanet = currentPlanet;
 
+        myPlanet.initTiles();
+        myTiles = currentPlanet.tiles;
 		// Where iz ma tiles?
 
 		foreach (Tile tile in myTiles) {

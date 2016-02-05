@@ -25,12 +25,15 @@ public class SpawnTile : MonoBehaviour {
 		GameObject newTile = (GameObject)Instantiate (tilePrefab, new Vector3 (starX, starY, 0), Quaternion.identity);
 
 		newTile.name = "tile" + tileId;
-		//newStar.GetComponent<Starx>().starName = starName; //Obsolete
-		newTile.GetComponent<SpriteRenderer> ().sprite = tileSprite;
+        //newStar.GetComponent<Starx>().starName = starName; //Obsolete
 
+        newTile.GetComponent<Tile>().tileInfo = createTile.tileInfo;
+        newTile.GetComponent<SpriteRenderer> ().sprite = tileSprite;
 		newTile.GetComponent<BoxCollider>().size = tileSprite.bounds.size;
+
 		textObject = newTile.GetComponentInChildren<TextMesh> ();
 		textObject.text = newTile.name + "\n";
+
 		if (createTile.tileInfo.building != null) {
 			textObject.text += createTile.tileInfo.building.name + "," + createTile.tileInfo.building.level;
 		}
@@ -38,7 +41,10 @@ public class SpawnTile : MonoBehaviour {
 	}
 
 	void Start(){
-		foreach( Tile tile in GameMaster.gameMaster.myTiles ){
+        foreach ( Tile t in GameMaster.gameMaster.myTiles ){
+            Tile tile = gameObject.AddComponent<Tile>();
+            tile.tileInfo = t.tileInfo;
+            Debug.Log("ANANXXX::" + tile.tileInfo.id);
 			CreateTile (tile);
 			Debug.Log ("Created tita");
 		}

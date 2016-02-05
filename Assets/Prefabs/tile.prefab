@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 480224}
   - 212: {fileID: 21265428}
   - 65: {fileID: 6550360}
+  - 114: {fileID: 11451334}
   m_Layer: 0
   m_Name: tile
   m_TagString: Untagged
@@ -118,6 +119,17 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &11451334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93dc7770709a9c04295c4deb9f44e8f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21265428
 SpriteRenderer:
   m_ObjectHideFlags: 1
