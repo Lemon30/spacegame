@@ -64,10 +64,19 @@ public class SpawnTile : MonoBehaviour {
 			if (GameMaster.gameMaster.selectedTile.tileInfo.building == null) {
 				GameObject menu = GameObject.FindGameObjectWithTag ("BuildingPanel");
 				menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
+				menu = GameObject.FindGameObjectWithTag ("DestroyButton");
+				menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
+				menu = GameObject.FindGameObjectWithTag ("UpgradeButton");
+				menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
 			} else {
 				GameObject menu = GameObject.FindGameObjectWithTag ("DestroyButton");
 				menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 50);
-
+				menu = GameObject.FindGameObjectWithTag ("UpgradeButton");
+				menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 50);
+				if (GameMaster.gameMaster.selectedTile.tileInfo.building.name == "Shipyard") {
+					menu = GameObject.FindGameObjectWithTag ("ShipyardPanel");
+					menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
+				}
 			}
 		}
 	}

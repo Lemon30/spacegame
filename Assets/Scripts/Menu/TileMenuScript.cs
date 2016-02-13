@@ -27,5 +27,17 @@ public class TileMenuScript : MonoBehaviour {
 		textObject.text = tileObj.name + "\n";
 		GameObject menu = GameObject.FindGameObjectWithTag ("DestroyButton");
 		menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
+		menu = GameObject.FindGameObjectWithTag ("UpgradeButton");
+		menu.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, 0);
+	}
+
+	public void upgradeBuilding(){
+		string objName = "tile" + (GameMaster.gameMaster.selectedTile.tileInfo.id);
+		GameMaster.gameMaster.selectedTile.tileInfo.building.level++;
+		GameMaster.gameMaster.UpdateResourceGeneration ();
+		GameObject tileObj = GameObject.Find (objName);
+		TextMesh textObject = tileObj.GetComponentInChildren<TextMesh> ();
+		textObject.text = tileObj.name + "\n";
+		textObject.text += GameMaster.gameMaster.selectedTile.tileInfo.building.name + "," + GameMaster.gameMaster.selectedTile.tileInfo.building.level;
 	}
 }

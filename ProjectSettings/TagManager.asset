@@ -12,6 +12,8 @@ TagManager:
   - star3D
   - planet3D
   - DestroyButton
+  - UpgradeButton
+  - ShipyardPanel
   layers:
   - Default
   - TransparentFX

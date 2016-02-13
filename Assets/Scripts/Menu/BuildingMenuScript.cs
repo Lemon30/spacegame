@@ -30,24 +30,32 @@ public class BuildingMenuScript : MonoBehaviour {
 			buildingMineralCost = 5;
 			buildingLuminiteCost = 0;
 			buildingId = "0";
-			buildingName = "Titanium Mine";
-			buildingType = "Mine";
+			buildingName = "TitaniumMine";
+			buildingType = "mine";
 			break;
 		case "mineralMine":
 			buildingTitaniumCost = 20;
 			buildingMineralCost = 10;
 			buildingLuminiteCost = 0;
 			buildingId = "1";
-			buildingName = "Mineral Mine";
-			buildingType = "Mine";
+			buildingName = "MineralMine";
+			buildingType = "mine";
 			break;
 		case "luminiteMine":
 			buildingTitaniumCost = 30;
 			buildingMineralCost = 15;
 			buildingLuminiteCost = 0;
 			buildingId = "2";
-			buildingName = "Luminite Mine";
-			buildingType = "Mine";
+			buildingName = "LuminiteMine";
+			buildingType = "mine";
+			break;
+		case "shipyard":
+			buildingTitaniumCost = 40;
+			buildingMineralCost = 20;
+			buildingLuminiteCost = 0;
+			buildingId = "6";
+			buildingName = "Shipyard";
+			buildingType = "factory";
 			break;
 		default:
 			Debug.Log ("Invalid building selection. Boo!");
